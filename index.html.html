@@ -379,19 +379,13 @@ db.collection("visitors")
 </footer>
 
 
-
 <script>
 function showAbout(){
     document.getElementById("aboutBox").style.display = "block";
 }
-
 function hideAbout(){
     document.getElementById("aboutBox").style.display = "none";
 }
-</script>
-
-
-<script>
 
 let searchValue = "";
 let categoryFilter = "";
@@ -405,20 +399,24 @@ function searchPosts() {
 }
 
 /* =========================
-   🟢 LOAD POSTS
+   🟢 LOAD POSTS (instant cache + live update)
 ========================= */
 function loadPosts() {
     let query = db.collection("posts").orderBy("time", "desc");
 
-    // Apply category filter directly in Firestore if provided
- if (categoryFilter && categoryFilter.trim() !== "") {
-    query = query.where("category", "==", categoryFilter.trim());
-}
+    if (categoryFilter && categoryFilter.trim() !== "") {
+        query = query.where("category", "==", categoryFilter.trim());
+    }
 
-
-    // Apply limit AFTER filters
     query = query.limit(10);
 
+    // 🔹 Step 1: Show cached posts immediately
+    let cached = localStorage.getItem("cachedPosts");
+    if (cached) {
+        document.getElementById("posts").innerHTML = cached;
+    }
+
+    // 🔹 Step 2: Firestore live updates (replace cache silently)
     query.onSnapshot(snapshot => {
         let postsHTML = "";
 
@@ -429,11 +427,10 @@ function loadPosts() {
             let title = (post.title || "").toLowerCase();
             let desc = (post.description || "").toLowerCase();
 
-            // Search filtering (still client-side unless you add searchKeywords field)
             let searchMatch =
                 searchValue === "" ||
-                title.includes(searchValue.toLowerCase()) ||
-                desc.includes(searchValue.toLowerCase());
+                title.includes(searchValue) ||
+                desc.includes(searchValue);
 
             if (searchMatch) {
                 postsHTML += `
@@ -455,7 +452,9 @@ function loadPosts() {
             }
         });
 
+        // 🔹 Step 3: Update DOM and cache
         document.getElementById("posts").innerHTML = postsHTML;
+        localStorage.setItem("cachedPosts", postsHTML);
     });
 }
 
@@ -470,10 +469,9 @@ function filterCategory(category) {
 }
 
 /* =========================
-   🟢 READ MORE (FIXED TOGGLE)
+   🟢 READ MORE TOGGLE
 ========================= */
 function toggleReadMore(postId, fullText) {
-
     let postBox = document.getElementById(postId);
     let desc = postBox.querySelector(".post-desc");
 
@@ -491,9 +489,10 @@ function toggleReadMore(postId, fullText) {
         postBox.dataset.expanded = "true";
     }
 }
-
 </script>
 
+<div id="posts"></div>
 <script src="visitor.js"></script>
 </body>
 </html>
+
