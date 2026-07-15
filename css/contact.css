@@ -1,0 +1,67 @@
+/* Global page styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: gold;
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Main heading */
+h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Contact links */
+.contact-links {
+  margin: 30px auto;
+  max-width: 500px;
+}
+.contact-links a {
+  display: block;
+  margin: 15px 0;
+  font-size: 18px;
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px;
+  border: 2px solid gold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.contact-links a:hover {
+  background: gold;
+  color: #0f172a;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: gold;
+  border-top: 1px solid gold;
+  padding-top: 15px;
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin: 25px auto;
+  padding: 10px 20px;
+  background: gold;
+  color: #0f172a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.back-btn:hover {
+  background: white;
+  color: #0f172a;
+}

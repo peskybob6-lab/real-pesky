@@ -1,0 +1,44 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: gold;
+    }
+
+    .block {
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    .use { background: #1e293b; }
+    .account { background: #334155; }
+    .content { background: #475569; }
+    .liability { background: #64748b; }
+    .law { background: #94a3b8; color: black; }
+
+    .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+    }
