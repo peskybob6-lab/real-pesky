@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REAL PESKY</title>
 
-    <!-- ✅ SEO meta tags -->
+    <!--  SEO meta tags -->
     <meta
       name="description"
       content="Latest football news, transfer updates, match reports, predictions, and trending highlights from Real Pesky."
@@ -16,9 +16,11 @@
     />
     <meta name="author" content="Real Pesky" />
 
-    <!-- ✅ Performance optimizations -->
+    <!--  Performance optimizations -->
     <link rel="preload" href="css/style.css" as="style" />
     <link rel="preload" href="javascript/index.js" as="script" />
+    <link rel="manifest" href="manifest.json">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,17 +29,17 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/png" href="img/pesky2.png" />
+    <link rel="icon" type="image/png" href="img/pesky3.png" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- ✅ Async ads script -->
+    <!--  Async ads script -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751724265533576"
       crossorigin="anonymous"
     ></script>
 
-    <!-- ✅ Firebase scripts (must load immediately for posts to work) -->
+    <!--  Firebase scripts (must load immediately for posts to work) -->
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
@@ -66,7 +68,7 @@
   <body>
     <header>
       <div class="title">
-        <!--  Lazy load logo -->
+        <!--   logo -->
         <img src="img/pesky2.png" alt="Logo" class="logo" loading="lazy" />
         <h1>REAL PESKY.SITE</h1>
       </div>
@@ -94,7 +96,7 @@
       <button onclick="searchPosts()">Search</button>
     </div>
 
-    <!-- ✅ Posts container -->
+    <!--  Posts container -->
     <div id="posts"></div>
 
     <footer class="social-footer">
@@ -125,10 +127,10 @@
       <p class="copy">© 2026 REAL PESKY</p>
     </footer>
 
-    <!-- ✅ Defer main JS (safe, Firebase already loaded above) -->
+    <!--  Defer main JS linking (safe, Firebase already loaded above) -->
     <script src="javascript/index.js" defer></script>
 
-    <!-- ✅ Structured data for SEO -->
+    <!--  Structured data for SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -145,5 +147,13 @@
         ]
       }
     </script>
+
+    <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("Service Worker registered"));
+  }
+</script>
+
   </body>
 </html>

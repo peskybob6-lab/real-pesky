@@ -51,7 +51,7 @@ function loadPosts() {
         desc.includes(searchValue);
 
       if (searchMatch) {
-        // ✅ Format Firestore timestamp and author
+        //  Format Firestore timestamp and author
         let postDate = post.time ? post.time.toDate().toLocaleString() : "";
         let author = post.author || "realpesky";
 
@@ -129,33 +129,3 @@ function toggleReadMore(postId, fullText) {
     postBox.dataset.expanded = "true";
   }
 }
-
-/* =========================
-   🟢 VISITOR COUNTER
-========================= */
-function getTodayDate() {
-  return new Date().toISOString().split("T")[0];
-}
-
-const statsRef = db.collection("analytics").doc("stats");
-statsRef.set(
-  { totalVisitors: firebase.firestore.FieldValue.increment(1) },
-  { merge: true },
-);
-
-const today = getTodayDate();
-const dailyRef = db.collection("dailyVisitors").doc(today);
-dailyRef.set(
-  { visitors: firebase.firestore.FieldValue.increment(1) },
-  { merge: true },
-);
-
-// 🔹 Optional: live display of visitor count
-statsRef.onSnapshot((doc) => {
-  if (doc.exists) {
-    let visitorElement = document.getElementById("visitorCount");
-    if (visitorElement) {
-      visitorElement.innerText = doc.data().totalVisitors || 0;
-    }
-  }
-});
