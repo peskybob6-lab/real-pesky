@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
 }
@@ -16,7 +16,7 @@ header {
 .panel-box {
   width: 90%;
   max-width: 500px;
-  margin: 40px auto;   /* centers horizontally */
+  margin: 20px auto;
   padding: 20px;
   background: #1e293b;
   border-radius: 12px;
@@ -37,4 +37,27 @@ button {
   background: gold;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 600px) {
+  header {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .login-box,
+  .panel-box {
+    width: 95%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
