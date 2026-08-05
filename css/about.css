@@ -5,6 +5,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Container */
@@ -77,22 +78,3 @@ footer {
   padding-top: 15px;
 }
 
-/* Back button */
-.back-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: gold;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.back-btn:hover {
-  background: white;
-  color: #0f172a;
-}

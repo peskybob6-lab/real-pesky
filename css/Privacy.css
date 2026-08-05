@@ -4,6 +4,7 @@
       color: white;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     .container {
@@ -29,16 +30,9 @@
     .choices { background: #64748b; }
     .contact { background: #94a3b8; color: black; }
 
-    .back-btn {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background: gold;
-      color: black;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      font-weight: bold;
-    }
+    .footer {
+  text-align: center;
+  margin-top: 20px;
+  color: gold;
+  font-weight: bold;
+}

@@ -1,44 +1,42 @@
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
-    }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-    h1 {
-      text-align: center;
-      color: gold;
-    }
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
 
-    .block {
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-    }
+h1 {
+  text-align: center;
+  color: gold;
+}
 
-    .use { background: #1e293b; }
-    .account { background: #334155; }
-    .content { background: #475569; }
-    .liability { background: #64748b; }
-    .law { background: #94a3b8; color: black; }
+.block {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
 
-    .back-btn {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background: gold;
-      color: black;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      font-weight: bold;
-    }
+.use { background: #1e293b; }
+.account { background: #334155; }
+.content { background: #475569; }
+.liability { background: #64748b; }
+.law { background: #94a3b8; color: black; }
+.contact { background: #cbd5e1; color: black; }
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: gold;
+  font-weight: bold;
+}

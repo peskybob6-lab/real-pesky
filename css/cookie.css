@@ -7,6 +7,10 @@ body {
   padding: 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Container */
 .container {
   max-width: 800px;
@@ -28,48 +32,29 @@ h1 {
 }
 
 /* Background tones for each section */
-.cookies { background: #1e293b; }
-.usage { background: #334155; }
-.types { background: #475569; }
+.cookies  { background: #1e293b; }
+.usage    { background: #334155; }
+.types    { background: #475569; }
 .managing { background: #64748b; }
-.contact { background: #94a3b8; color: black; }
+.contact  { background: #94a3b8; color: black; }
 
 /* Links */
 a {
   color: gold;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 a:hover {
   color: white;
 }
 
 /* Footer */
-footer {
+.footer {
   text-align: center;
   margin-top: 30px;
   font-size: 14px;
   color: gold;
   border-top: 1px solid gold;
   padding-top: 15px;
-}
-
-/* Back button */
-.back-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: gold;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.back-btn:hover {
-  background: white;
-  color: #0f172a;
 }

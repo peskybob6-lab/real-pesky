@@ -1,11 +1,14 @@
 /* Global page styling */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #0f172a;
-  color: gold;
-  line-height: 1.8;
+  color: white;
   margin: 0;
   padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 /* Container */
@@ -15,23 +18,10 @@ body {
   padding: 20px;
 }
 
-/* Headings */
+/* Main heading */
 h1 {
   text-align: center;
   color: gold;
-  margin-bottom: 20px;
-}
-h2 {
-  color: gold;
-  margin-bottom: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* Paragraphs */
-p {
-  margin-bottom: 18px;
-  font-size: 16px;
 }
 
 /* Section blocks */
@@ -41,11 +31,11 @@ p {
   border-radius: 10px;
 }
 
-/* Different background tones for each section */
-.ownership { background: #1e293b; }
-.permitted { background: #334155; }
+/* Background tones */
+.ownership   { background: #1e293b; }
+.permitted   { background: #334155; }
 .third-party { background: #475569; }
-.contact { background: #64748b; }
+.contact     { background: #94a3b8; color: black; }
 
 /* Links */
 a {
@@ -59,31 +49,11 @@ a:hover {
 }
 
 /* Footer */
-footer {
+.footer {
   text-align: center;
   margin-top: 30px;
   font-size: 14px;
   color: gold;
   border-top: 1px solid gold;
   padding-top: 15px;
-}
-
-/* Back button */
-.back-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: gold;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.back-btn:hover {
-  background: white;
-  color: #0f172a;
 }
