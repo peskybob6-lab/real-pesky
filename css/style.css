@@ -4,6 +4,13 @@
   background: linear-gradient(to right, #0f172a, #1e293b);
   color: white;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 #posts {
@@ -26,21 +33,33 @@
 }
 
 HEADER .title {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  min-height: 70px;
+  width: 100%;
   padding: 15px;
 }
 
 .logo {
+  grid-column: 1;
+  justify-self: end;
+  margin-right: 20px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.logo-right {
+  grid-column: 3;
+  justify-self: start;
+  margin-right: 0;
+  margin-left: 20px;
+}
+
 h1 {
+  grid-column: 2;
   margin: 0;
 }
 
@@ -57,7 +76,10 @@ h1 {
 
 h1 {
   margin: 0;
-  font-size: 2.3em; /* subtle increase */
+  font-size: 2.2em;
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -68,6 +90,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 15px;
+  width: 100%;
   padding: 12px;
   background: #1e293b;
   border-bottom: 2px solid gold;
@@ -88,6 +111,11 @@ h1 {
 
   h1 {
     font-size: 1.7rem;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
   }
 
   .navbar {
@@ -132,13 +160,19 @@ h1 {
 }
 
 .search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   text-align: center;
   margin: 15px;
 }
 
 .search-box input {
   padding: 8px;
-  width: 60%;
+  width: min(60%, 520px);
+  min-width: 0;
   border: none;
   border-radius: 8px;
 }
@@ -154,7 +188,7 @@ h1 {
 
 .post {
   background: #1e293b;
-  max-width: 700px;
+  width: min(100% - 24px, 700px);
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
@@ -364,7 +398,7 @@ footer .policy-links a:hover {
 /* Apply slow shake animation to all nav links */
 .navbar a {
   display: inline-block;
-  animation: slowShake 6s infinite ease-in-out; /* very slow cycle */
+  animation: slowShake 6s infinite ease-in-out;
 }
 
 /* Stagger each link with delays so they shake one after the other */
@@ -412,7 +446,7 @@ footer .policy-links a:hover {
 /* Apply slow shake animation to all social links */
 .social-links a {
   display: inline-block;
-  animation: slowShake 6s infinite ease-in-out; /* very slow cycle */
+  animation: slowShake 6s infinite ease-in-out;
 }
 
 /* Stagger each link with delays so they shake one after the other */
@@ -473,7 +507,7 @@ footer .policy-links a:hover {
 /* Rotate the logo infinitely */
 .logo {
   display: inline-block;
-  animation: rotateLogo 10s linear infinite; /* slow rotation */
+  animation: rotateLogo 10s linear infinite;
 }
 
 /* Define the rotation keyframes */
@@ -491,7 +525,6 @@ footer .policy-links a:hover {
   font-weight: bold;
   font-size: 1.1em;
   color: #ffcc00; /* professional gold tone */
-  animation: slideLoop 10s ease-in-out infinite;
 }
 
 /* Keyframes for sliding left → center → right */
