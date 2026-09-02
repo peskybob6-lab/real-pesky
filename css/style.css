@@ -14,7 +14,7 @@
 }
 
 #posts {
-  width: min(100%, 1100px);
+  width: 100%;
   margin: 0 auto;
   padding: 0 12px 32px;
 }
@@ -64,7 +64,6 @@ h1 {
 }
 
 .main-header {
-  text-align: center;
   color: gold;
   border: 2px solid gold;
   border-radius: 12px;
@@ -72,6 +71,18 @@ h1 {
   padding: 8px;
   margin: 0px auto;
   max-width: 700px;
+}
+
+.main-header span {
+  display: block;
+}
+
+.main-header span:first-child {
+  text-align: left;
+}
+
+.main-header span:last-child {
+  text-align: center;
 }
 
 h1 {
@@ -188,7 +199,7 @@ h1 {
 
 .post {
   background: #1e293b;
-  width: min(100% - 24px, 900px);
+  width: 100%;
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
