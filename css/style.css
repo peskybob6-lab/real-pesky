@@ -1,10 +1,30 @@
-body {
+﻿body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #0f172a, #1e293b);
   color: white;
   box-sizing: border-box;
 }
+
+#posts {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 0 12px 32px;
+}
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  width: 100%;
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 HEADER .title {
   display: flex;
   align-items: center;
@@ -60,13 +80,48 @@ h1 {
   font-size: 14px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .main-header {
+    margin: 10px 10px 0;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
   .navbar {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    padding: 10px;
   }
+
   .navbar a {
-    font-size: 13px;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .search-box input {
+    width: 78%;
+  }
+
+  .post {
+    margin: 12px auto;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .post h3 {
+    font-size: 18px;
+  }
+
+  .post p {
+    font-size: 15px;
+  }
+
+  .loading-state {
+    min-height: 220px;
+    font-size: 1rem;
   }
 }
 
@@ -111,6 +166,10 @@ h1 {
   margin: 10px 0;
 }
 
+.post-title {
+  color: #ffffff;
+}
+
 .post-actions {
   margin-top: 15px;
 }
@@ -118,10 +177,16 @@ h1 {
 .post-actions button {
   padding: 8px 12px;
   margin-right: 8px;
-  background: gold;
-  border: none;
+  background: transparent;
+  border: 1px solid #94a3b8;
   border-radius: 6px;
   cursor: pointer;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.post-actions button:hover {
+  background: transparent;
 }
 
 /* FOOTER */
@@ -451,4 +516,44 @@ footer .policy-links a:hover {
     transform: translateX(100%);
     opacity: 0;
   } /* stay off right */
+}
+
+
+
+
+#seeMoreBtn {
+  display: none;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: #007BFF; /* blue */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  animation: shake 2s infinite;
+}
+#seeMoreBtn:hover {
+  background: #0056b3;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+.closeBtn {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 16px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  background: #222;
 }
