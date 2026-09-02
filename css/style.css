@@ -36,9 +36,9 @@ HEADER .title {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  min-height: 70px;
+  min-height: 0;
   width: 100%;
-  padding: 15px;
+  padding: 10px 15px 4px;
 }
 
 .logo {
@@ -64,13 +64,15 @@ h1 {
 }
 
 .main-header {
+  width: min(100% - 24px, 760px);
   color: gold;
   border: 2px solid gold;
-  border-radius: 12px;
+  border-radius: 8px;
   background: rgba(255, 215, 0, 0.1);
-  padding: 8px;
-  margin: 0px auto;
-  max-width: 700px;
+  padding: 7px 12px;
+  margin: 0 auto;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .main-header span {
@@ -100,9 +102,9 @@ h1 {
 .navbar {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   width: 100%;
-  padding: 12px;
+  padding: 8px 12px;
   background: #1e293b;
   border-bottom: 2px solid gold;
 }
@@ -116,8 +118,10 @@ h1 {
 
 @media (max-width: 640px) {
   .main-header {
-    margin: 10px 10px 0;
-    padding: 10px;
+    width: calc(100% - 24px);
+    margin: 0 12px;
+    padding: 7px 10px;
+    font-size: 1.2rem;
   }
 
   h1 {
@@ -177,7 +181,7 @@ h1 {
   flex-wrap: wrap;
   gap: 8px;
   text-align: center;
-  margin: 15px;
+  margin: 10px 12px 14px;
 }
 
 .search-box input {
@@ -374,36 +378,38 @@ h1 {
 }
 
 footer .policy-links {
-  display: block;
-  max-width: 250px;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #444;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 760px);
+  margin: 24px auto 0;
 }
 
 footer .policy-links a {
   display: block;
-  padding: 12px;
-  font-size: 16px;
-  color: #0f172a;
-  background: #f9fafb;
-  border-bottom: 1px solid #444;
-  text-decoration: underline;
+  padding: 10px 8px;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #475569;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
   font-weight: bold;
-  text-align: left;
-  margin: 0;
+  text-align: center;
   transition:
     background 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-footer .policy-links a:last-child {
-  border-bottom: none;
+footer .policy-links a:hover,
+footer .policy-links a:focus-visible {
+  background: gold;
+  border-color: gold;
+  color: #0f172a;
 }
 
-footer .policy-links a:hover {
-  background: #e5e7eb;
-  color: #000;
+  outline: none;
 }
 
 /* Apply slow shake animation to all nav links */
