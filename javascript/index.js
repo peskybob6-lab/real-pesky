@@ -357,8 +357,6 @@ function updateScrollPostUrl() {
   }
 }
 
-window.addEventListener("scroll", updateScrollPostUrl, { passive: true });
-
 window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const postId = urlParams.get("post");

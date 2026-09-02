@@ -14,7 +14,7 @@
 }
 
 #posts {
-  width: min(100%, 900px);
+  width: min(100%, 1100px);
   margin: 0 auto;
   padding: 0 12px 32px;
 }
@@ -188,7 +188,7 @@ h1 {
 
 .post {
   background: #1e293b;
-  width: min(100% - 24px, 700px);
+  width: min(100% - 24px, 900px);
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
