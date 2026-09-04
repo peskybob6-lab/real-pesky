@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/(.*)", "destination": "https://realpesky.site/$1", "permanent": true }
+  ]
+}
